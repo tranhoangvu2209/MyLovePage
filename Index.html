@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gửi đến em 💖</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" type="image/png">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #ffb6c1, #ffe4e1, #b5fffc);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      animation: bgMove 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .heart {
+      position: absolute;
+      color: rgba(255, 105, 180, 0.7);
+      animation: floatUp 8s linear infinite;
+      font-size: 16px;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(0.6); opacity: 0; }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(255, 182, 193, 0.3);
+      padding: 40px 45px;
+      width: 420px;
+      text-align: center;
+      animation: fadeIn 1.5s ease forwards;
+      transform-style: preserve-3d;
+      transform: perspective(600px) rotateY(0deg);
+      transition: transform 1s ease;
+    }
+
+    .card:hover {
+      transform: perspective(600px) rotateY(10deg) rotateX(2deg) scale(1.02);
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      color: #ff4b91;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.8;
+      font-size: 1.05em;
+      text-align: left;
+      margin: 10px 0;
+    }
+
+    .image-box {
+      margin: 25px 0;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 25px rgba(255, 91, 148, 0.25);
+      transition: transform 0.5s ease;
+    }
+
+    .image-box:hover {
+      transform: scale(1.05);
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    footer {
+      margin-top: 25px;
+      color: #777;
+      font-size: 0.9em;
+      letter-spacing: 0.4px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sparkle {
+      position: absolute;
+      background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: twinkle 5s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { transform: scale(0.8); opacity: 0.5; }
+      50% { transform: scale(1.4); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    for (let i = 0; i < 20; i++) {
+      let heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 5 + Math.random() * 6 + "s";
+      heart.style.fontSize = 14 + Math.random() * 20 + "px";
+      heart.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(heart);
+    }
+
+    for (let i = 0; i < 15; i++) {
+      let spark = document.createElement("div");
+      spark.classList.add("sparkle");
+      spark.style.width = spark.style.height = Math.random() * 10 + 5 + "px";
+      spark.style.left = Math.random() * 100 + "vw";
+      spark.style.top = Math.random() * 100 + "vh";
+      spark.style.animationDuration = 3 + Math.random() * 3 + "s";
+      document.body.appendChild(spark);
+    }
+  </script>
+
+  <div class="card">
+    <h1>Gửi đến em 💌</h1>
+    <p>Em à,</p>
+    <p>Có những điều anh chẳng biết diễn tả bằng lời, chỉ biết rằng, khi nghĩ về em — tim anh lại thấy bình yên đến lạ.</p>
+    <p>Em là người khiến thế giới của anh trở nên rực rỡ, là lý do khiến mỗi ngày anh muốn cố gắng hơn một chút, chỉ để xứng đáng với tình yêu ấy.</p>
+    <p>Cảm ơn em vì đã bước vào cuộc đời anh, dịu dàng mà sâu đậm đến thế. Anh sẽ mãi trân trọng từng khoảnh khắc có em. ❤️</p>
+    <p>— Anh</p>
+
+    <div class="image-box">
+      <img src="anh1.jpg" alt="Ảnh của chúng ta">
+    </div>
+
+    <footer>💖 Gửi bằng tất cả yêu thương anh có 💖</footer>
+  </div>
+
+  <audio id="bgMusic" autoplay loop>
+  <source src="love..mp3" type="audio/mpeg">
+  Trình duyệt của bạn không hỗ trợ phát nhạc.
+</audio>
+
+<script>
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.7; 
+
+  music.play().catch(() => {
+    const btn = document.createElement("button");
+    btn.innerText = "🎵 Bật nhạc";
+    btn.style = `
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    `;
+    btn.onclick = () => {
+      music.play();
+      btn.remove();
+    };
+    document.body.appendChild(btn);
+  });
+</script>
+</body>
+</html>
