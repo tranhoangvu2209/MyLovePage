@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dành cho người đặc biệt 💕</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffe6f0, #ffb6c1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Segoe UI', cursive;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      background: #ff4d6d;
+      transform: rotate(-45deg);
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      box-shadow: 0 0 30px rgba(255, 77, 109, 0.6);
+      animation: heartbeat 1.5s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background: #ff4d6d;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.2) rotate(-45deg); }
+    }
+
+    .qr-container {
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.8s ease;
+      text-align: center;
+    }
+
+    .qr-container.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .qr-container img {
+      width: 180px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
+      margin-top: 20px;
+    }
+
+    h2 {
+      color: #d63384;
+      font-size: 22px;
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    h2.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="heart" id="heart"></div>
+
+  <div class="qr-container" id="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tranhoangvu2209.github.io/MyLovePage/" alt="QR Code">
+    <h2 id="text">Dành cho người đặc biệt 💕</h2>
+  </div>
+  <script>
+    const heart = document.getElementById('heart');
+    const qr = document.getElementById('qr');
+    const text = document.getElementById('text');
+
+    heart.addEventListener('click', () => {
+      heart.style.transform = 'scale(0)';
+      heart.style.opacity = '0';
+      setTimeout(() => {
+        qr.classList.add('show');
+        text.classList.add('show');
+      }, 600);
+    });
+  </script>
+</body>
+</html>
